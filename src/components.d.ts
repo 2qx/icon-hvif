@@ -6,56 +6,56 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
+    interface IconHvif {
         /**
           * The last name
          */
-        "last": string;
+        "data": any;
         /**
-          * The middle name
+          * The name
          */
-        "middle": string;
+        "name": string;
+        /**
+          * The last name
+         */
+        "size": number;
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLIconHvifElement extends Components.IconHvif, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLIconHvifElement: {
+        prototype: HTMLIconHvifElement;
+        new (): HTMLIconHvifElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "icon-hvif": HTMLIconHvifElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
+    interface IconHvif {
         /**
           * The last name
          */
-        "last"?: string;
+        "data"?: any;
         /**
-          * The middle name
+          * The name
          */
-        "middle"?: string;
+        "name"?: string;
+        /**
+          * The last name
+         */
+        "size"?: number;
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "icon-hvif": IconHvif;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "icon-hvif": LocalJSX.IconHvif & JSXBase.HTMLAttributes<HTMLIconHvifElement>;
         }
     }
 }

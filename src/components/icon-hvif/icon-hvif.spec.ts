@@ -1,36 +1,39 @@
 import { newSpecPage } from '@stencil/core/testing';
-import { MyComponent } from './my-component';
+import { IconHvif } from './icon-hvif';
 
-describe('my-component', () => {
+describe('icon-hvif', () => {
   it('renders', async () => {
+
     const { root } = await newSpecPage({
-      components: [MyComponent],
-      html: '<my-component></my-component>',
+      components: [IconHvif],
+      html: '<icon-hvif data="6e636966010500010a042020206060606020010a00010000"></icon-hvif>',
     });
+    
     expect(root).toEqualHtml(`
-      <my-component>
+      <icon-hvif  data="6e636966010500010a042020206060606020010a00010000">
         <mock:shadow-root>
           <div>
             Hello, World! I'm
           </div>
         </mock:shadow-root>
-      </my-component>
+      </icon-hvif>
     `);
   });
 
   it('renders with values', async () => {
     const { root } = await newSpecPage({
-      components: [MyComponent],
-      html: `<my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>`,
+      components: [IconHvif],
+      html: `<icon-hvif name="Stencil" data="6e636966010500010a042020206060606020010a00010000"></icon-hvif>`,
     });
+    
     expect(root).toEqualHtml(`
-      <my-component first="Stencil" last="'Don't call me a framework' JS">
+      <icon-hvif name="Stencil" data="6e636966010500010a042020206060606020010a00010000">
         <mock:shadow-root>
           <div>
             Hello, World! I'm Stencil 'Don't call me a framework' JS
           </div>
         </mock:shadow-root>
-      </my-component>
+      </icon-hvif>
     `);
   });
 });
